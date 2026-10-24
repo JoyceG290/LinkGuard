@@ -1,0 +1,6 @@
+{
+  "name": "LinkShield - Phishing & Scam URL Scanner",
+  "description": "Real-time threat scanner and AI-powered phishing detector for suspicious links in emails and SMS messages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

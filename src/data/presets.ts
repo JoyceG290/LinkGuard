@@ -1,0 +1,58 @@
+import { PresetScenario } from '../types/scanner';
+
+export const PRESET_SCENARIOS: PresetScenario[] = [
+  {
+    id: 'usps-sms-scam',
+    label: 'USPS Package Delivery SMS',
+    brand: 'USPS',
+    type: 'phishing',
+    url: 'http://usps.com.tracking-parcel-support.top/redirection/verify?parcel_id=9201948',
+    messageText: 'USPS Notice: Your package could not be delivered due to an incorrect house number and unpaid fee of $2.95. Please update your details within 12 hours: http://usps.com.tracking-parcel-support.top/redirection/verify?parcel_id=9201948',
+    description: 'Classic postal smishing attack using subdomain masquerading (usps.com on .top TLD) and small fee trick.',
+  },
+  {
+    id: 'bofa-urgent-lock',
+    label: 'Bank of America Account Lock',
+    brand: 'Bank of America',
+    type: 'phishing',
+    url: 'https://bofa-security-alert-session.xyz/auth/login?client_id=092',
+    messageText: 'Bank of America Security Alert: We detected an unauthorized login attempt from an unknown device. Your access is temporarily frozen. Verify your identity immediately to restore account access: https://bofa-security-alert-session.xyz/auth/login?client_id=092',
+    description: 'Banking credential harvester using artificial urgency and a brand lookalike registered domain.',
+  },
+  {
+    id: 'netflix-payment-fail',
+    label: 'Netflix Billing Suspension Email',
+    brand: 'Netflix',
+    type: 'phishing',
+    url: 'http://net-flix-billing-update.info/portal/renew',
+    messageText: 'Your Netflix subscription has been paused because we were unable to process your monthly payment. Update your credit card info now to prevent service cancellation: http://net-flix-billing-update.info/portal/renew',
+    description: 'Streaming service payment lure using unencrypted HTTP and a hyphenated lookalike domain.',
+  },
+  {
+    id: 'm365-password-expiry',
+    label: 'Microsoft 365 Password Expiry',
+    brand: 'Microsoft',
+    type: 'phishing',
+    url: 'https://login.microsoftonline.com-auth-portal.cc/reauth',
+    messageText: 'IT Department: Your Microsoft 365 password expires in 2 hours. To maintain access and keep your current password, authenticate through the organizational portal: https://login.microsoftonline.com-auth-portal.cc/reauth',
+    description: 'Corporate spear-phishing lure simulating IT helpdesk password expiration.',
+  },
+  {
+    id: 'google-support-safe',
+    label: 'Google Account Help (Legitimate)',
+    brand: 'Google',
+    type: 'safe',
+    url: 'https://support.google.com/accounts/answer/185834',
+    messageText: 'Official Google Help article on securing your Google account with 2-Step Verification.',
+    description: 'Authentic Google official subdomain with trusted SSL and standard domain structure.',
+  },
+  {
+    id: 'github-repo-safe',
+    label: 'GitHub Repository (Legitimate)',
+    brand: 'GitHub',
+    type: 'safe',
+    url: 'https://github.com/facebook/react',
+    messageText: 'Official React open-source repository on GitHub.',
+    description: 'Verified GitHub repository page with trusted domain reputation.',
+  },
+];
